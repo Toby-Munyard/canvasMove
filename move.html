@@ -14,13 +14,27 @@
             setInterval(mainloop, 1000/50)
         }
 
+        var pXpos = 0;
+        var pYpos = 0;
+        var pSIZE = 50;
+        var pXspeed = 5;
+        var pYspped = 5;
+
+        var player = new Image();
+        player.src = 'sans.png';
+
         function mainloop(){
             colorRect(0,0,canvas.width,canvas.height,'black');
+            drawImgs(player,pXpos,pYpos,pSIZE,pSIZE);
+        }
+
+        function drawImgs(src,x,y,w,h){
+            canvasContext.drawImage(src,x,y,w,h);
         }
 
         function colorRect(x,y,w,h,c){
             canvasContext.fillStyle = c;
-            canvasContext.fillRect(x,y,w,h,c);
+            canvasContext.fillRect(x,y,w,h);
         }
     </script>
 </body>
